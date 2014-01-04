@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import timber.log.Timber;
-
 import android.annotation.TargetApi;
 import android.app.Notification;
 import android.content.Context;

@@ -2,12 +2,8 @@ package com.matejdro.pebblenotificationcenter.tasker;
 
 import java.io.IOException;
 
-import net.dinglisch.android.tasker.TaskerPlugin;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-
-import timber.log.Timber;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

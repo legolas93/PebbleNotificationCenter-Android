@@ -10,12 +10,12 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
+        android:name=".PebbleNotificationCenter"
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:name=".PebbleNotificationCenter"
         android:theme="@style/AppTheme" >
         <service
             android:name="com.matejdro.pebblenotificationcenter.notifications.JellybeanNotificationListener"
@@ -30,8 +30,7 @@
             android:name="com.matejdro.pebblenotificationcenter.notifications.AccesibilityNotificationListener"
             android:enabled="@bool/useAccesibility"
             android:label="Notification Center for Pebble"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-             >
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
             <meta-data
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_config" />
@@ -43,7 +42,8 @@
         <service android:name="com.matejdro.pebblenotificationcenter.PebbleTalkerService" >
         </service>
 
-        <receiver android:name="com.matejdro.pebblenotificationcenter.DataReceiver"
+        <receiver
+            android:name="com.matejdro.pebblenotificationcenter.DataReceiver"
             android:exported="true" >
             <intent-filter>
                 <action android:name="com.getpebble.action.app.RECEIVE" />
@@ -52,17 +52,22 @@
 
         <activity
             android:name="com.matejdro.pebblenotificationcenter.ui.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.matejdro.pebblenotificationcenter.ui.PerAppActivity"
+            android:label="@string/per_app_title" >
+        </activity>
         <activity android:name=".ui.SettingsActivity" >
         </activity>
 
-        <receiver android:name="com.matejdro.pebblenotificationcenter.CustomNotificationCatcher"
+        <receiver
+            android:name="com.matejdro.pebblenotificationcenter.CustomNotificationCatcher"
             android:exported="true" >
             <intent-filter>
                 <action android:name="com.getpebble.action.SEND_NOTIFICATION" />
@@ -71,21 +76,21 @@
 
         <activity android:name=".ui.LicenseActivity" >
         </activity>
-
         <activity
             android:name="com.matejdro.pebblenotificationcenter.tasker.TaskerSetupActivity"
-            android:label="@string/title_activity_main"
-            android:exported="true" >
+            android:exported="true"
+            android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
             </intent-filter>
         </activity>
 
-        <receiver android:name=".tasker.TaskerReceiver"
+        <receiver
+            android:name=".tasker.TaskerReceiver"
             android:exported="true" >
             <intent-filter>
-                  <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
-              </intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
+            </intent-filter>
         </receiver>
     </application>
 

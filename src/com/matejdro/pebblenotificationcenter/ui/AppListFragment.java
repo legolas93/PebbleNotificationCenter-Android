@@ -1,5 +1,14 @@
 package com.matejdro.pebblenotificationcenter.ui;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import timber.log.Timber;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -8,7 +17,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,15 +30,6 @@ import android.widget.TextView;
 import com.matejdro.pebblenotificationcenter.PebbleNotificationCenter;
 import com.matejdro.pebblenotificationcenter.R;
 import com.matejdro.pebblenotificationcenter.util.ListSerialization;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import timber.log.Timber;
 
 public class AppListFragment extends Fragment {
 
@@ -146,6 +145,19 @@ public class AppListFragment extends Fragment {
 			final AppInfoStorage appInfo = apps.get(position);
 
 			holder.name.setText(appInfo.label);
+			
+			//Edit by Runnerway
+			convertView.setOnLongClickListener(new View.OnLongClickListener() {
+				
+				@Override
+				public boolean onLongClick(View v) {
+					Intent intent = new Intent(getActivity(), PerAppActivity.class);
+					intent.putExtra("PER_APP_PACKAGE_NAME", appInfo.label);
+					startActivity(intent);
+					return true;
+				}
+			});
+			
 			holder.icon.setImageDrawable(appInfo.icon);
 
 			convertView.setOnClickListener(new View.OnClickListener() {

@@ -1,5 +1,27 @@
 package com.getpebble.android.kit;
 
+import static com.getpebble.android.kit.Constants.APP_UUID;
+import static com.getpebble.android.kit.Constants.CUST_APP_TYPE;
+import static com.getpebble.android.kit.Constants.CUST_ICON;
+import static com.getpebble.android.kit.Constants.CUST_NAME;
+import static com.getpebble.android.kit.Constants.INTENT_APP_ACK;
+import static com.getpebble.android.kit.Constants.INTENT_APP_CUSTOMIZE;
+import static com.getpebble.android.kit.Constants.INTENT_APP_NACK;
+import static com.getpebble.android.kit.Constants.INTENT_APP_RECEIVE;
+import static com.getpebble.android.kit.Constants.INTENT_APP_RECEIVE_ACK;
+import static com.getpebble.android.kit.Constants.INTENT_APP_RECEIVE_NACK;
+import static com.getpebble.android.kit.Constants.INTENT_APP_SEND;
+import static com.getpebble.android.kit.Constants.INTENT_APP_START;
+import static com.getpebble.android.kit.Constants.INTENT_APP_STOP;
+import static com.getpebble.android.kit.Constants.INTENT_PEBBLE_CONNECTED;
+import static com.getpebble.android.kit.Constants.INTENT_PEBBLE_DISCONNECTED;
+import static com.getpebble.android.kit.Constants.MSG_DATA;
+import static com.getpebble.android.kit.Constants.TRANSACTION_ID;
+
+import java.util.UUID;
+
+import org.json.JSONException;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -7,12 +29,9 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
+
+import com.getpebble.android.kit.Constants.PebbleAppType;
 import com.getpebble.android.kit.util.PebbleDictionary;
-import org.json.JSONException;
-
-import java.util.UUID;
-
-import static com.getpebble.android.kit.Constants.*;
 
 /**
  * A helper class providing methods for interacting with third-party Pebble Smartwatch applications. Pebble-enabled

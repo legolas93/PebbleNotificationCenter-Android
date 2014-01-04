@@ -91,5 +91,14 @@
     <string name="enterChracter">You need to enter one character or unicode code for it!</string>
     <string name="importNoFiles">No dictionary files found.\n\nPlace your replacement dictionary .txt files into NotificationCenter folder on your phone\'s storage and try again.</string>
     
+    <string name="per_app_title">Per App Settings</string>
+    <string name="per_app_filter_mode_text">Filters work-mode:</string>
+    <string-array name="per_app_filter_mode_spinner">
+        <item>Both</item>
+        <item>Include ONLY of the Excluded</item>
+        <item>Exclude ONLY of the Included</item>
+    </string-array>
+    <string name="regex_include">Include</string>
+    <string name="regex_exclude">Exclude</string>
     
 </resources>

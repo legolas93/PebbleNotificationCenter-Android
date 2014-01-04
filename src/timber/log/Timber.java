@@ -1,11 +1,12 @@
 package timber.log;
 
-import android.util.Log;
-import android.util.SparseBooleanArray;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import android.util.Log;
+import android.util.SparseBooleanArray;
 
 /** Logging for lazy people. */
 // From https://github.com/JakeWharton/timber
