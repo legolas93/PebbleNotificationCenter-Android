@@ -8,12 +8,13 @@
         android:id="@+id/regexDescriptionIn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/regexModePickerDescription" />
+        android:text="@string/per_app_description" />
 
     <LinearLayout
         android:id="@+id/regexModePickerIn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -43,6 +44,7 @@
         android:id="@+id/regexModePickerEx"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -71,6 +73,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
         android:gravity="center"
         android:orientation="horizontal" >
 

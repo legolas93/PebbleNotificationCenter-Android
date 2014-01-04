@@ -93,8 +93,9 @@
     
     <string name="per_app_title">Per App Settings</string>
     <string name="per_app_filter_mode_text">Filters work-mode:</string>
+    <string name="per_app_description">Per App filters by keywords/regular expressions for notifications that should be included/excluded from displaying.</string>
     <string-array name="per_app_filter_mode_spinner">
-        <item>Both</item>
+        <item>Both applied</item>
         <item>Include ONLY of the Excluded</item>
         <item>Exclude ONLY of the Included</item>
     </string-array>

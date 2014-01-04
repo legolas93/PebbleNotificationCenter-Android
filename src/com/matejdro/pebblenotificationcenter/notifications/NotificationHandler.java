@@ -126,13 +126,8 @@ public class NotificationHandler {
 				return;
 			}
 		} else if (perAppMode == 2){
-			if(!matchRegexVerifier(patternsIn, true, title, secondaryTitle, text) && matchRegexVerifier( patternsEx, false, title, secondaryTitle, text)){
-				//Prevent the case of empty Ex list
-				if(patternsEx.size()==0) return;
-				if (isDismissible)
-					PebbleTalkerService.notify(context, id, pack, tag, title, secondaryTitle, text, !isOngoing);
-				else
-					PebbleTalkerService.notify(context, title, secondaryTitle, text);
+			if(matchRegexVerifier(patternsIn, true, title, secondaryTitle, text) && !matchRegexVerifier( patternsEx, false, title, secondaryTitle, text)){
+				return;
 			} else if(matchRegexVerifier(patternsIn, true, title, secondaryTitle, text)){
 				if (isDismissible)
 					PebbleTalkerService.notify(context, id, pack, tag, title, secondaryTitle, text, !isOngoing);
